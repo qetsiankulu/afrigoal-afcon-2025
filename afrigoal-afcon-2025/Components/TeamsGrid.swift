@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Kingfisher   // use to optimize API calls for te
 
 struct TeamsGrid: View {
     let teams: [Team]
     let textColor: Color
     
-    let columns = Array(repeating: GridItem(.flexible(), spacing: 24), count: 4) // 4 columns
+    let columns = Array(repeating: GridItem(.flexible(), spacing: 30), count: 4) // 4 columns
     
     var body: some View {
         ScrollView {
@@ -20,63 +21,52 @@ struct TeamsGrid: View {
                 Text("All teams")
                     .foregroundColor(textColor)
                     .font(Font.custom("OpenSans-SemiBold", size: 16))
-                    .padding(.leading, 20)
-                
-                
+                    .padding(.leading, 40)
+                    .padding(.top, 20)
                 Spacer() // pushes `All teams` to far left
             }
-            LazyVGrid(columns: columns, spacing: 32) {
+            
+            // Grid containing all the teams in the competition 
+            LazyVGrid(columns: columns) {
                 ForEach(teams) { team in
                     // Flag + Country Name Icon created with VStack
                     VStack {
-                        // Flag
-                        Image(team.countryFlag)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 64, height: 64)
-                            .clipShape(Circle())
-                            .background(Circle().fill(Color.gray.opacity(0.7)))
+                        // Display flags making a simple API call to FlagsAPI
+                        // KFImage handles caching and efficient loading
                         
+                        KFImage(URL(string: "https://flagsapi.com/\(team.countryCode)/flat/64.png"))
+                            .placeholder {
+                                Circle()
+                                    .fill(Color.gray.opacity(0.3))
+                                    .frame(width: 48, height: 48)
+                            }
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 60, height: 60)
+                        
+
                         // Team name
                         Text(team.name)
                             .foregroundColor(textColor)
-                            .font(.custom("OpenSans-Regular", size: 14))
+                            .font(.custom("OpenSans-SemiBold", size: 13))
+                            .frame(height: 3)
+                            .multilineTextAlignment(.center)
                     }
-                    .frame(width: 90, height: 110)
-                    
+                    .frame(width: 100, height: 90)
+                    .padding(.bottom, 20)
                 }
             }
-            .padding()
+            .padding(.horizontal, 47)
+            .padding(.bottom, 150)
+                    
         }
+        
+        
     }
 }
 
 
 #Preview {
-    TeamsGrid(teams: [
-        Team(name: "Algeria", countryFlag: "algeria-flag"),
-        Team(name: "Angola", countryFlag: "angola-flag"),
-        Team(name: "Benin", countryFlag: "benin-flag"),
-        Team(name: "Botswana", countryFlag: "botswana-flag"),
-        Team(name: "Burkina Faso", countryFlag: "burkinafaso-flag"),
-        Team(name: "Cameroon", countryFlag: "cameroon-flag"),
-        Team(name: "Comoros", countryFlag: "comoros-flag"),
-        Team(name: "Côte d’Ivoire", countryFlag: "ivorycoast-flag"),
-        Team(name: "DR Congo", countryFlag: "drc-flag"),
-        Team(name: "Egypt", countryFlag: "egypt-flag"),
-        Team(name: "Equatorial Guinea", countryFlag: "equatorialguinea-flag"),
-        Team(name: "Gabon", countryFlag: "gabon-flag"),
-        Team(name: "Mali", countryFlag: "mali-flag"),
-        Team(name: "Morocco", countryFlag: "morocco-flag"),
-        Team(name: "Mozambique", countryFlag: "mozambique-flag"),
-        Team(name: "Nigeria", countryFlag: "nigeria-flag"),
-        Team(name: "Senegal", countryFlag: "senegal-flag"),
-        Team(name: "South Africa", countryFlag: "southafrica-flag"),
-        Team(name: "Sudan", countryFlag: "sudan-flag"),
-        Team(name: "Tanzania", countryFlag: "tanzania-flag"),
-        Team(name: "Tunisia", countryFlag: "tunisia-flag"),
-        Team(name: "Uganda", countryFlag: "uganda-flag"),
-        Team(name: "Zambia", countryFlag: "zambia-flag"),
-        Team(name: "Zimbabwe", countryFlag: "zimbabwe-flag")
-    ], textColor: Color.black)
+    SelectTeams()
 }
+

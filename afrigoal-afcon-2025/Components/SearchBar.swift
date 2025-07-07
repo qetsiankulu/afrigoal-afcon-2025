@@ -11,7 +11,7 @@ struct SearchBar: View {
     @FocusState private var isFocused: Bool // Tracks focus state
 
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 14) {
             // Magnifying glass icon
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color.gray.opacity(0.7))
@@ -61,7 +61,6 @@ struct SearchBar: View {
         .background(Color.black.opacity(0.5))
         .cornerRadius(12)
         .frame(maxWidth: 360)
-        
     }
 }
 

@@ -22,30 +22,23 @@ struct PrivacyNotice: View {
                     Spacer()
                     Text("Your privacy is important to us")
                         .foregroundColor(.white)
-                        .font(Font.custom("Staatliches-Regular", size: 24))
+                        .font(Font.custom("Staatliches-Regular", size: 28))
                         .fontWeight(.regular)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: 360, alignment: .leading)
                     
-                    Text("We collect some personal data to tailor your experience to your preferences")
+                    Text("We collect some personal data to tailor your experience to your preferences.")
                         .foregroundColor(.white)
                         .font(Font.custom("OpenSans-Regular", size: 16))
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: 360, alignment: .leading)
                     
-                    // Continue button
-                    NavigationLink(destination: SelectTeams()) {
-                        Text("Let's Begin")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 360)
-                            .background(Color("bttn-active"))
-                            .cornerRadius(10)
-                            .padding(.horizontal, 40)
+                    // Let's Begin button
+                    NavigationButton(destination: SelectTeams(), text: "Let's Begin", isActive: true)
+
                     }
-                    .padding(.bottom, 10)
-                }
+                    .padding(.bottom, 20)
+                
             }
         }
     }
