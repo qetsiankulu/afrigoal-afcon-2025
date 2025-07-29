@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SelectTeamsHeader: View {
     @Binding var searchText: String
-    //let progress: CGFloat
-    
     
     var body: some View {
         VStack(spacing: 5) {
@@ -23,24 +21,27 @@ struct SelectTeamsHeader: View {
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .navigationBarBackButtonHidden(true) // Hides the back button
-            
+          
             // Description
             Text("Get instant access to news, upcoming fixtures, and more!")
                 .foregroundColor(.white)
                 .font(Font.custom("OpenSans-Regular", size: 16))
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                       
+    
             // Search Teams
             SearchBar(searchText: $searchText)
+            
             Spacer() // Pushes content to top of Header container
         }
         .ignoresSafeArea(.keyboard) 
         .padding(.horizontal, 40)
         .padding(.top, 40)
-        .background(Color("primary-red"))
-        .frame(maxWidth: .infinity, maxHeight: 230)
+        .background(Color("primary-red").ignoresSafeArea(edges: .top))
         .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 8)
+        .frame(maxWidth: .infinity, maxHeight: 230)
+    
+       
     }
     
 }

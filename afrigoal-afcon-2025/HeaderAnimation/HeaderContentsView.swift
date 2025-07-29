@@ -8,7 +8,6 @@ import SwiftUI
 
 struct HeaderContentsView: View {
     @Binding var searchText: String
-    let showSkipButton: Bool
     let progress: CGFloat
 
     var body: some View {
@@ -40,8 +39,8 @@ struct HeaderContentsView: View {
                 .offset(y: -6 * progress)
         }
         .padding(.horizontal, 25)
-        .background(Color("primary-red"))
-        .frame(maxWidth: .infinity, maxHeight: 300)
+        .background(Color("primary-red").ignoresSafeArea(edges: .top))
+        .frame(maxWidth: .infinity, maxHeight: 230)
     }
 }
 

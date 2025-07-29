@@ -109,19 +109,21 @@ struct SelectTeams2: View {
     /// Header View
     @ViewBuilder
     func HeaderView() -> some View {
-        let headerHeight = (size.height * 0.25) + safeArea.top
+        let headerHeight = (size.height * 0.3) + safeArea.top
         let minimumHeaderHeight = 20 + safeArea.top
         /// Converting Offset into Progress
         /// Limiting it to 0 - 1
         let progress = max(min(-offsetY / (headerHeight - minimumHeaderHeight), 1), 0)
         GeometryReader { _ in
             ZStack {
-                Rectangle()
-                    .fill(Color("primary-red"))
+//                Rectangle()
+//                    .fill(Color("primary-red"))
+                
+                Color("primary-red")
+                       .ignoresSafeArea()
                 
                 // MARK: Header contents
                 HeaderContentsView(searchText: $searchText,
-                                   showSkipButton: showSkipButton,
                                    progress: progress)
                 .padding(.top, safeArea.top)
             }

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6309F1BD2E26BCCF0012B55E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6309F1BC2E26BCCF0012B55E /* README.md */; };
 		6311842D2E1C08BE003C9BAD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6311842C2E1C08BE003C9BAD /* Kingfisher */; };
+		63431E2C2E2D37A50065EB16 /* Macaw in Frameworks */ = {isa = PBXBuildFile; productRef = 63431E2B2E2D37A50065EB16 /* Macaw */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6309F1BC2E26BCCF0012B55E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		634F919D2E199AAF00B7273A /* afrigoal-afcon-2025.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "afrigoal-afcon-2025.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -40,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63431E2C2E2D37A50065EB16 /* Macaw in Frameworks */,
 				6311842D2E1C08BE003C9BAD /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +54,7 @@
 		634F91942E199AAF00B7273A = {
 			isa = PBXGroup;
 			children = (
+				6309F1BC2E26BCCF0012B55E /* README.md */,
 				634F919F2E199AAF00B7273A /* afrigoal-afcon-2025 */,
 				634F919E2E199AAF00B7273A /* Products */,
 			);
@@ -84,6 +89,7 @@
 			name = "afrigoal-afcon-2025";
 			packageProductDependencies = (
 				6311842C2E1C08BE003C9BAD /* Kingfisher */,
+				63431E2B2E2D37A50065EB16 /* Macaw */,
 			);
 			productName = "afrigoal-afcon-2025";
 			productReference = 634F919D2E199AAF00B7273A /* afrigoal-afcon-2025.app */;
@@ -115,6 +121,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				6311842B2E1C08BE003C9BAD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				63431E2A2E2D37A50065EB16 /* XCRemoteSwiftPackageReference "Macaw" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 634F919E2E199AAF00B7273A /* Products */;
@@ -131,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6309F1BD2E26BCCF0012B55E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +292,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +324,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,6 +370,14 @@
 				minimumVersion = 8.4.0;
 			};
 		};
+		63431E2A2E2D37A50065EB16 /* XCRemoteSwiftPackageReference "Macaw" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Macaw";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.10;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -369,6 +385,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6311842B2E1C08BE003C9BAD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		63431E2B2E2D37A50065EB16 /* Macaw */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63431E2A2E2D37A50065EB16 /* XCRemoteSwiftPackageReference "Macaw" */;
+			productName = Macaw;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

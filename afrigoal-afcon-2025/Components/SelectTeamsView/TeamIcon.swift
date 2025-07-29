@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-import Kingfisher     // used to optimize API calls to retrieve images 
+import Kingfisher     // used to optimize API calls to retrieve images
+
 
 struct TeamIcon : View {
     let team: Team
@@ -16,20 +17,19 @@ struct TeamIcon : View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             VStack(spacing: 0) {
-//                 Team flag
-//                 Retrieve country flags making a simple API call to FlagsAPI
-                KFImage(URL(string: "https://flagsapi.com/\(team.countryCode)/flat/64.png"))   // KFImage handles caching and efficient loading
+                // Team flag
+                KFImage(URL(string: "https://flagsapi.com/\(team.countryCode)/flat/64.png"))
                     .placeholder {
                         Circle()
                             .fill(Color.gray.opacity(0.3))
-                            .frame(width: 40, height: 40)
+                            .frame(width: 50, height: 50)
                     }
                     .resizable()
+                    .scaledToFill()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 45, height: 45)
+                    .frame(width: 55, height: 55, alignment: .center)
                     .padding(.top, 18)
-                    
-                
+
                 // Team name
                 Text(team.name)
                     .foregroundColor(textColor)
@@ -41,7 +41,8 @@ struct TeamIcon : View {
             }
             .frame(width: 83, height: 90)
             .padding(.bottom, 10)
-            .background(                                    // TeamIcon is selected
+            .background(
+                // TeamIcon is selected
                 RoundedRectangle(cornerRadius: 12)
                     .fill(isSelected ? Color("primary-red").opacity(0.5) : Color.clear)
                     .stroke(isSelected ? (Color("bttn-active")) : Color.clear, lineWidth: 2)

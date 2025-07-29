@@ -14,6 +14,11 @@ struct TurnOnNotifs : View {
     var body: some View {
         NavigationStack {
             ZStack {
+                SkipButton(destination: Home())
+                    .padding(.trailing, 70)
+                    .padding(.bottom, 720)
+                    .zIndex(1000)
+                
                 // Background image
                 Image("privacy-notice-bg-img")
                     .resizable()
@@ -37,7 +42,7 @@ struct TurnOnNotifs : View {
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: 360, alignment: .leading)
                     
-                    // Actual UI button
+                    // Turn on notifications button
                     Button(action: {
                         Task {
                             await requestNotificationsPermissions()
