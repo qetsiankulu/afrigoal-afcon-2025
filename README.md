@@ -9,11 +9,11 @@
 
 ### Description
 
-AfriGoal is an app designed for soccer fans. It is specifically tailored to be the hub of all information related to the African Cup of Nations that will take place in January 2024. Fans can to access live scores and real-time updates for all matches in the African Cup of Nations. Users can see scores for upcoming matches and current group standings. 
+AfriGoal is an app designed for soccer fans. It is specifically tailored to be the hub of all information related to the African Cup of Nations. Fans can to access live scores and real-time updates for all matches in the African Cup of Nations. Users can see scores for upcoming matches and current group standings. 
 
 ### App Evaluation
 
-   - **Description**: AfriGoal is an app designed for soccer fans. It is specifically tailored to be the hub of all information related to the African Cup of Nations that will take place in January 2024. Fans can to access live scores and real-time updates for all matches in the African Cup of Nations. Users can see scores for upcoming matches and current group standings. 
+   - **Description**: AfriGoal is an app designed for soccer fans. It is specifically tailored to be the hub of all information related to the African Cup of Nations. Fans can to access live scores and real-time updates for all matches in the African Cup of Nations. Users can see scores for upcoming matches and current group standings. 
    - **Category:** Sports
    - **Mobile:**  AfriGoal app's real-time features, push notifications, and habit-forming potential, combined with the scope of future updates, make it a uniquely mobile tool for soccer fans. The focus on timely, interactive, and engaging content tailored to the African Cup of Nations sets it apart from a basic website. 
        - **Real-Time Updates:** The app provides real-time updates for live scores and match results. This real-time feature is essential for soccer fans who want to stay updated on matches as they happen. It distinguishes the app from a static website
