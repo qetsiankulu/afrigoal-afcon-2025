@@ -11,7 +11,7 @@ import SwiftUI
 struct afrigoal_afcon_2025App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PrivacyNotice()
         }
     }
 }

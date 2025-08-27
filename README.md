@@ -35,7 +35,7 @@ This branch focuses on the **user onboarding experience** to help new users sele
 - [x] **Team Selection UI** – Users can browse and select multiple national teams they want to follow.
 - [x] **Search Functionality** – A search bar allows filtering teams by name.
 - [x] **Responsive Grid Layout** – Clean, grid-based layout that adapts to screen size with visual feedback for selected teams.
-- [] **Smooth Header Animation** – The header shrinks or hides on scroll for more screen space while selecting teams.
+- [x] **Smooth Header Animation** – The header shrinks or hides on scroll for more screen space while selecting teams, powered by [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) from [Exyte](https://github.com/exyte)
 - [x] **Keyboard Dismissal on Scroll** – Smart gesture handling to dismiss the keyboard when the user starts scrolling.
 - [x] **Continue Button Activation** – The "Continue" button becomes active only when the user has selected at least one team.
 - [x] **Skip Option** – Users can optionally skip team selection and proceed to the next step.
@@ -47,7 +47,13 @@ This branch focuses on the **user onboarding experience** to help new users sele
 ### 🎓 What I Learned
 - Implementing **keyboard dismissal with drag gestures** in SwiftUI using `.simultaneousGesture` to preserve scroll behavior.
 - Managing **state across views** using `@StateObject` and `@Binding` effectively.
+- Learned how to refactor an existing component by integrating and customizing a component from an open-source SwiftUI library.
 - Structuring **scrollable content with animations** for a polished onboarding feel.
 - Fine-tuning layout with `GeometryReader`, `ZStack`, and `Spacer()` to handle different screen sizes and navigation stacks.
 - Building a secure **Python FastAPI backend** to safely proxy and manage API key/secret for LiveScoreAPI, enabling secure data fetching from the iOS app without exposing sensitive credentials.
+- Learned how to deploy a FastAPI backend to **Render**, securely manage API keys with environment variables, and connect the iOS app to a live backend so both simulator and physical devices can fetch data remotely
 - Applying the **MVVM pattern** by using a ViewModel to bridge the View and Model layers, ensuring a clear separation of concerns and making SwiftUI code more scalable and testable
+
+
+## Credits
+- [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) by [Exyte](https://github.com/exyte)

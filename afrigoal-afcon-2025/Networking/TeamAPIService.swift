@@ -56,7 +56,7 @@ let countryCodeMap: [String: String] = [
 
 class TeamService {
     func fetchTeams() async throws -> [Team] {
-        guard let url = URL(string:"http://localhost:8000/afcon/teams") else {
+        guard let url = URL(string:"https://afrigoal-backend.onrender.com/afcon/teams") else {
             throw URLError(.badURL)
         }
         
@@ -69,7 +69,7 @@ class TeamService {
         // Create a list of`Team` objects
         let teams = decoded.teams
             .compactMap() { teamData -> Team? in
-                guard let code = countryCodeMap[teamData.name] else { return nil }
+                guard let code = countryCodeMap[teamData.name] else { return nil } // assign a countryCode to each team
                 return Team(name: teamData.name, countryCode: code)
         }
         .sorted { $0.name < $1.name } // sort teams alphabetically
