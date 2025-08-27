@@ -41,19 +41,22 @@ This branch focuses on the **user onboarding experience** to help new users sele
 - [x] **Skip Option** – Users can optionally skip team selection and proceed to the next step.
 - [x] **Notification Permission Prompt** – After choosing their favorite teams, users are asked to enable push notifications for live scores and match updates.
 
-### 🖼️ Design Screens
-
-
 ### 🎓 What I Learned
 - Implementing **keyboard dismissal with drag gestures** in SwiftUI using `.simultaneousGesture` to preserve scroll behavior.
 - Managing **state across views** using `@StateObject` and `@Binding` effectively.
-- Learned how to refactor an existing component by integrating and customizing a component from an open-source SwiftUI library.
+- Learned how to refactor an existing component by integrating and customizing a component from an open-source SwiftUI library created by [Exyte](https://github.com/exyte).
 - Structuring **scrollable content with animations** for a polished onboarding feel.
 - Fine-tuning layout with `GeometryReader`, `ZStack`, and `Spacer()` to handle different screen sizes and navigation stacks.
 - Building a secure **Python FastAPI backend** to safely proxy and manage API key/secret for LiveScoreAPI, enabling secure data fetching from the iOS app without exposing sensitive credentials.
 - Learned how to deploy a FastAPI backend to **Render**, securely manage API keys with environment variables, and connect the iOS app to a live backend so both simulator and physical devices can fetch data remotely
 - Applying the **MVVM pattern** by using a ViewModel to bridge the View and Model layers, ensuring a clear separation of concerns and making SwiftUI code more scalable and testable
 
+
+### 🖼️ Design Screens
+- Mid-fidelity mockups created in Figma by me, illustrating the onboarding's core screens and user flow
+<img width="394" height="863" alt="1" src="https://github.com/user-attachments/assets/66757df6-ff5e-4639-b218-652fd7c7d901" />
+<img width="394" height="863" alt="2" src="https://github.com/user-attachments/assets/c3fbb3f0-e6c8-49cd-8e24-0d817da9b122" />
+<img width="394" height="863" alt="3" src="https://github.com/user-attachments/assets/0e1084ad-814d-44df-9f49-71b4f4bbc682" />
 
 ## Credits
 - [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) by [Exyte](https://github.com/exyte)
