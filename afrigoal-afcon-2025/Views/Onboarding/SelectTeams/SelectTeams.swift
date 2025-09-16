@@ -19,9 +19,15 @@ struct SelectTeams: View {
             // Main content
             VStack {
                 NavigationStack {
-                    ZStack {
-                        Color("bg-red").ignoresSafeArea() // Background color 
+                    ZStack(alignment: .topTrailing) {
+                        Color("bg-red").ignoresSafeArea() // Background color
                         
+                        // Skip button only if no teams selected
+                        if viewModel.selectedTeams.isEmpty {
+                            SkipButton(destination: TurnOnNotifs())
+                        }
+                        
+                        // Main Content
                         ScalingHeaderScrollView {
                             // Header with fading effect
                             SelectTeamsHeader(searchText: $viewModel.searchText)
@@ -38,15 +44,9 @@ struct SelectTeams: View {
                             .animation(.easeInOut, value: viewModel.filteredTeams) // Animates the various teams
                         }
                         .height(max: 230)
-                        .height(min: 60)
+                        .height(min: 51)
                         .ignoresSafeArea(.all, edges: .top)
                         .toolbarBackground(Color("primary-red"), for: .navigationBar) // Match color of header background
-                        .toolbar {
-                            // Skip Button
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                SkipButton(destination: TurnOnNotifs())
-                            }
-                        }
                      
                         // Continue Button
                         VStack {

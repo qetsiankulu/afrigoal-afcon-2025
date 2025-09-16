@@ -13,21 +13,18 @@ struct TurnOnNotifs : View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                SkipButton(destination: Home())
-                    .padding(.trailing, 70)
-                    .padding(.bottom, 720)
-                    .zIndex(1000)
-                
+            ZStack(alignment: .topTrailing) {
+                Color("bg-red").ignoresSafeArea() // Background color
+                    
                 // Background image
-                Image("turn-on-notifs-bg-img")
-                    .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea()
-                    .offset(x: -51)
-                    .overlay(
-                           Color.black.opacity(0.4) // adjust opacity as needed
-                       )
+//                Image("turn-on-notifs-bg-img")
+//                    .resizable()
+//                    .scaledToFill()
+//                    .ignoresSafeArea()
+//                    .offset(x: -51)
+//                    .overlay(
+//                           Color.black.opacity(0.4) // adjust opacity as needed
+//                       )
                     
                 
                 // Text
@@ -69,6 +66,9 @@ struct TurnOnNotifs : View {
                 .navigationDestination(isPresented: $navigate) {
                     Home()
                 }
+                
+                SkipButton(destination: Home())
+                    .zIndex(1.0)
                 
             }
         }
