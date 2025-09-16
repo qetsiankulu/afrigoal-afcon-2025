@@ -11,6 +11,7 @@
 
 AfriGoal is an app designed for soccer fans. It is specifically tailored to be the hub of all information related to the African Cup of Nations. Fans can to access live scores and real-time updates for all matches in the African Cup of Nations. Users can see scores for upcoming matches and current group standings. 
 
+<!--
 ### App Evaluation
 
    - **Description**: AfriGoal is an app designed for soccer fans. It is specifically tailored to be the hub of all information related to the African Cup of Nations. Fans can to access live scores and real-time updates for all matches in the African Cup of Nations. Users can see scores for upcoming matches and current group standings. 
@@ -24,7 +25,7 @@ AfriGoal is an app designed for soccer fans. It is specifically tailored to be t
        - **International Soccer Fans:** Beyond the African continent and the diaspora, the app can also cater to international soccer fans who are interested in global soccer competitions. The African Cup of Nations has gained popularity worldwide given that many African nationals play in international leagues across the world. 
        - **Potential Partners:** In the future, the app could be of interest to potential partners and sponsors of the African Cup of Nations or related soccer events. As the app grows and gains users, it may become a valuable platform for advertisers, sponsors, and organizers to connect with their target audience.
    - **Habit:** The app is designed to cater to the habit of users during the African Cup of Nations, which occurs on odd-numbered years (2023, 2025, 2027) and runs for about 5 weeks. Mobile devices are essential for users to check group standings and scores regularly during this time.
-
+-->
 
 ## Onboarding
 
@@ -34,8 +35,8 @@ This branch focuses on the **user onboarding experience** to help new users sele
 
 - [x] **Team Selection UI** – Users can browse and select multiple national teams they want to follow.
 - [x] **Search Functionality** – A search bar allows filtering teams by name.
-- [x] **Responsive Grid Layout** – Clean, grid-based layout that adapts to screen size with visual feedback for selected teams.
-- [x] **Smooth Header Animation** – The header shrinks or hides on scroll for more screen space while selecting teams, powered by [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) from [Exyte](https://github.com/exyte)
+- [x] **Responsive Grid Layout** – Grid-based layout that adapts to screen size with visual feedback for selected teams.
+- [x] **Smooth Header Animation** – The header hides on scroll for more screen space while selecting teams, powered by [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) from [Exyte](https://github.com/exyte)
 - [x] **Keyboard Dismissal on Scroll** – Smart gesture handling to dismiss the keyboard when the user starts scrolling.
 - [x] **Continue Button Activation** – The "Continue" button becomes active only when the user has selected at least one team.
 - [x] **Skip Option** – Users can optionally skip team selection and proceed to the next step.
@@ -47,7 +48,7 @@ This branch focuses on the **user onboarding experience** to help new users sele
 - Learned how to refactor an existing component by integrating and customizing a component from an open-source SwiftUI library created by [Exyte](https://github.com/exyte).
 - Structuring **scrollable content with animations** for a polished onboarding feel.
 - Fine-tuning layout with `GeometryReader`, `ZStack`, and `Spacer()` to handle different screen sizes and navigation stacks.
-- Building a secure **Python FastAPI backend** to safely proxy and manage API key/secret for LiveScoreAPI, enabling secure data fetching from the iOS app without exposing sensitive credentials.
+- Building a secure [**Python FastAPI backend**](https://github.com/qetsiankulu/afrigoal-backend) to safely proxy and manage API key/secret for LiveScoreAPI, enabling secure data fetching from the iOS app without exposing sensitive credentials.
 - Learned how to deploy a FastAPI backend to **Render**, securely manage API keys with environment variables, and connect the iOS app to a live backend so both simulator and physical devices can fetch data remotely
 - Applying the **MVVM pattern** by using a ViewModel to bridge the View and Model layers, ensuring a clear separation of concerns and making SwiftUI code more scalable and testable
 
