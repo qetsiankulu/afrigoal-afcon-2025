@@ -12,11 +12,9 @@ import ScalingHeaderScrollView
 struct SelectTeams: View {
     
     @StateObject private var viewModel = SelectTeamsViewModel()
-    
     var body: some View {
         // Put the entire view in GeometryReader{} and apply .ignoresSafeArea(.keyboard) modifier to it to prevent keyboard from shifting the enire view up
         GeometryReader { geo in
-            // Main content
             VStack {
                 NavigationStack {
                     ZStack(alignment: .topTrailing) {
@@ -87,6 +85,10 @@ struct SelectTeams: View {
 
 
 
+// Computer
+private extension SelectTeams {
+    
+}
 
     
 

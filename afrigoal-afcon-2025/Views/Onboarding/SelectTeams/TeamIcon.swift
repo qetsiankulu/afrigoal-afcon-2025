@@ -13,6 +13,7 @@ struct TeamIcon : View {
     let team: Team
     let textColor: Color
     let isSelected: Bool
+    let onTap: () -> Void
     
     var body: some View {
         ZStack(alignment: .topTrailing) {

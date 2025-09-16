@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 class SelectTeamsViewModel: ObservableObject {
     @Published var searchText = ""
-    @Published var selectedTeams: [Team] = []
+    @Published var selectedTeams: Set<Team> = []
     @Published var allTeams: [Team] = []
     @Published var isLoading = false
     

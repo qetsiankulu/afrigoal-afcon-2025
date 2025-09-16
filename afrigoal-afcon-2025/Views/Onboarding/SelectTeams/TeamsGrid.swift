@@ -12,35 +12,24 @@ struct TeamsGrid: View {
     let teams: [Team]
     let textColor: Color
     
-    @Binding var selectedTeams: [Team]
+    @Binding var selectedTeams: Set<Team>
     
-    let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 4) // 4 columns
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 4) // 4 columns
     
     var body: some View {
         ScrollView {
             // "All Teams" Label
-            HStack {
-                Text("All teams")
-                    .foregroundColor(textColor)
-                    .font(Font.custom("OpenSans-SemiBold", size: 16))
-                    .padding(.leading, 40)
-                    .padding(.top, 15)
-                Spacer() // pushes `All teams` to far left
-            }
+            TeamsHeader(textColor: textColor)
             
-            // Grid containing all the teams in the competition 
+            // Grid containing all the teams in the competition
             LazyVGrid(columns: columns) {
                 ForEach(teams) { team in
-                    let isSelected = selectedTeams.contains(where: {$0.id == team.id})
-                    
-                    // Team Icon
-                    TeamIcon(team: team, textColor: Color.white, isSelected: isSelected)
-                    .onTapGesture {
-                        if isSelected {
-                            selectedTeams.removeAll() { $0.id == team.id }
-                        } else {
-                            selectedTeams.append(team)
-                        }
+                    TeamIcon(
+                        team: team,
+                        textColor: .white,
+                        isSelected: selectedTeams.contains(team)
+                    ) {
+                        toggleSelection(for: team)                  // When a TeamIcon is selected, toggle the selection
                     }
                 }
             }
@@ -48,19 +37,63 @@ struct TeamsGrid: View {
             .padding(.bottom, 150)
         }
         // Dismiss the keyboard when the TeamsGrid is dragged
-        .simultaneousGesture(
-            DragGesture().onChanged { _ in
-                UIApplication.shared.endEditing()
-            })
-        .onChange(of: selectedTeams) {
-                  print("Selected teams:", selectedTeams.map { $0.name })
+        // Print the selected teams to the console
+        .dismissKeyboardOnDrag()
+        .onChange(of: selectedTeams) { printSelectedTeams()}
+    }
+
+    // MARK: - Selection
+    private func toggleSelection(for team: Team) {
+        if selectedTeams.contains(team) {
+            selectedTeams.remove(team)
+        } else {
+            selectedTeams.insert(team)
         }
     }
     
-//    @ViewBuilder
-//    private func allTeamsLabel
+    private func printSelectedTeams() {
+        print("Selected teams:", selectedTeams.map { $0.name })
+    }
+
+}
+
+// MARK: - TeamsHeader
+struct TeamsHeader: View {
+    let textColor: Color
+    
+    var body: some View {
+        HStack {
+            Text("All teams")
+                .foregroundColor(textColor)
+                .font(Font.custom("OpenSans-SemiBold", size: 16))
+                .padding(.leading, 40)
+                .padding(.top, 15)
+            Spacer() // pushes `All teams` to far left
+        }
+        
+    }
+}
+
+// MARK: - Dismiss keyboard modifier
+// Adds a drag gesture to any view it is applied to
+// Whenever the user drags on the view, the keyboard is dismossed
+struct DismissKeyboardOnDrag: ViewModifier {
+    func body(content: Content) -> some View {
+        content.simultaneousGesture(
+            DragGesture().onChanged { _ in
+                UIApplication.shared.endEditing() //
+            }
+        )
+    }
+}
+
+// Makes it easy to use DismissKeyboardOnDrag modifer
+// Calls .dismissKeyboardOnDrag instead of .modifier(DismissKeyboardOnDrag())
+extension View {
+    func dismissKeyboardOnDrag() -> some View {self.modifier(DismissKeyboardOnDrag())}
 }
             
+// Dismisses the keyboard
 extension UIApplication {
     func endEditing() {
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
