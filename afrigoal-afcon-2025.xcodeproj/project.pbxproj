@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6309F1BD2E26BCCF0012B55E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6309F1BC2E26BCCF0012B55E /* README.md */; };
 		6311842D2E1C08BE003C9BAD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6311842C2E1C08BE003C9BAD /* Kingfisher */; };
+		639D97442E78BFF500125CAC /* ScalingHeaderScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 639D97432E78BFF500125CAC /* ScalingHeaderScrollView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6311842D2E1C08BE003C9BAD /* Kingfisher in Frameworks */,
+				639D97442E78BFF500125CAC /* ScalingHeaderScrollView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +89,7 @@
 			name = "afrigoal-afcon-2025";
 			packageProductDependencies = (
 				6311842C2E1C08BE003C9BAD /* Kingfisher */,
+				639D97432E78BFF500125CAC /* ScalingHeaderScrollView */,
 			);
 			productName = "afrigoal-afcon-2025";
 			productReference = 634F919D2E199AAF00B7273A /* afrigoal-afcon-2025.app */;
@@ -118,6 +121,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				6311842B2E1C08BE003C9BAD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				639D97422E78BFF500125CAC /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 634F919E2E199AAF00B7273A /* Products */;
@@ -366,6 +370,14 @@
 				minimumVersion = 8.4.0;
 			};
 		};
+		639D97422E78BFF500125CAC /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ScalingHeaderScrollView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -373,6 +385,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6311842B2E1C08BE003C9BAD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		639D97432E78BFF500125CAC /* ScalingHeaderScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 639D97422E78BFF500125CAC /* XCRemoteSwiftPackageReference "ScalingHeaderScrollView" */;
+			productName = ScalingHeaderScrollView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

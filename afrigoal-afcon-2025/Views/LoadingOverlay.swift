@@ -18,7 +18,6 @@ struct LoadingOverlay : View {
     var body: some View {
         ZStack {
 //            backgroundColor.ignoresSafeArea()                 // Adds color to background
-            
             VStack(spacing: 10){
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: progressTint))

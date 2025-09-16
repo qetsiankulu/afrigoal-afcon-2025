@@ -6,48 +6,57 @@
 //
 
 import SwiftUI
+import ScalingHeaderScrollView
+
 
 struct SelectTeams: View {
     
     @StateObject private var viewModel = SelectTeamsViewModel()
     
+    // Put the entire view in GeometryReader{} and apply .ignoresSafeArea(.keyboard) modifier to it to prevent keyboard from shifting the enire view up
     var body: some View {
-        // Put the entire view in GeometryReader{} and apply .ignoresSafeArea(.keyboard) modifier to it to prevent keyboard from shifting the enire view up
         GeometryReader { geo in
-            
             // Main content
             VStack {
-                ZStack {
-                    NavigationStack {
-                        ZStack {
-                            Color("bg-red").ignoresSafeArea()
-                            
-                            SkipButton(destination: TurnOnNotifs())
-                                .padding(.trailing, 35)
-                                .padding(.bottom, 720)
-                                .zIndex(1000)
-                            
-                            VStack(spacing: 0) {
-                                SelectTeamsHeader(searchText: $viewModel.searchText)
-                                
-                                // WORKING BUILD
-                                TeamsGrid(
-                                    teams: viewModel.filteredTeams,
-                                    textColor: Color.white,
-                                    selectedTeams: $viewModel.selectedTeams
-                                )
-                                
+                NavigationStack {
+                    ZStack {
+                        Color("bg-red").ignoresSafeArea()
+                        
+                        ScalingHeaderScrollView {
+                            // Header with fading effect
+                            SelectTeamsHeader(searchText: $viewModel.searchText)
+                        }
+                        content: {
+                            // Scrollable Content
+                            TeamsGrid(
+                                teams: viewModel.filteredTeams,
+                                textColor: .white,
+                                selectedTeams: $viewModel.selectedTeams
+                            )
+                            .padding(.top, 5)
+                            .padding(.horizontal, 15)
+                            .animation(.easeInOut, value: viewModel.filteredTeams) // Animates the various teams
+                        }
+                        .height(max: 230)
+                        .height(min: 60)
+                        .ignoresSafeArea(.all, edges: .top)
+                        .toolbarBackground(Color("primary-red"), for: .navigationBar) // match header bg
+                        .toolbar {
+                            // Skip Button
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                SkipButton(destination: TurnOnNotifs())
                             }
-                            
-                            VStack {
-                                Spacer()
-                                NavigationButton(
-                                    destination: TurnOnNotifs(),
-                                    text: "Continue",
-                                    isActive: !viewModel.selectedTeams.isEmpty
-                                )
-                                .padding(.bottom, 5)
-                            }
+                        }
+                     
+                        // Continue Button
+                        VStack {
+                            Spacer()
+                            NavigationButton(
+                                destination: TurnOnNotifs(),
+                                text: "Continue",
+                                isActive: !viewModel.selectedTeams.isEmpty
+                            )
+                            .padding(.bottom, 5)
                         }
                     }
                 }
@@ -61,13 +70,22 @@ struct SelectTeams: View {
             // Loading overlay that is conditionally shown
             if viewModel.isLoading {
                 LoadingOverlay()
+                    .padding(.top, 150)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity) // fill available space
+                    .background(Color.black.opacity(0.3)) // optional dimmed background
+                    .edgesIgnoringSafeArea(.all) // make it cover full screen
+                    .zIndex(1) // ensure it’s on top
             }
+            
+  
         }
         .ignoresSafeArea(.keyboard)
     }
 
 
 }
+
+
 
 
     
