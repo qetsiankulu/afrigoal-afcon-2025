@@ -11,7 +11,7 @@ struct PrivacyNotice: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // background image
+                // Background image
                 Image("privacy-notice-bg-img")
                     .resizable()
                     .scaledToFill()

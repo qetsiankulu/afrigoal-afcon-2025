@@ -34,3 +34,8 @@ struct LoadingOverlay : View {
     }
 
 }
+
+#Preview {
+    
+    LoadingOverlay()
+}

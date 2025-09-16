@@ -13,8 +13,8 @@ struct SelectTeams: View {
     
     @StateObject private var viewModel = SelectTeamsViewModel()
     
-    // Put the entire view in GeometryReader{} and apply .ignoresSafeArea(.keyboard) modifier to it to prevent keyboard from shifting the enire view up
     var body: some View {
+        // Put the entire view in GeometryReader{} and apply .ignoresSafeArea(.keyboard) modifier to it to prevent keyboard from shifting the enire view up
         GeometryReader { geo in
             // Main content
             VStack {
@@ -40,7 +40,7 @@ struct SelectTeams: View {
                         .height(max: 230)
                         .height(min: 60)
                         .ignoresSafeArea(.all, edges: .top)
-                        .toolbarBackground(Color("primary-red"), for: .navigationBar) // match header bg
+                        .toolbarBackground(Color("primary-red"), for: .navigationBar) // Match color of header background
                         .toolbar {
                             // Skip Button
                             ToolbarItem(placement: .navigationBarTrailing) {
