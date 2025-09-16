@@ -24,24 +24,26 @@ struct TeamIcon : View {
             }
             .frame(width: 83, height: 90)
             .padding(.bottom, 10)
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(isSelected ? Color("primary-red").opacity(0.5) : Color.clear)
-                    .stroke(isSelected ? (Color("bttn-active")) : Color.clear, lineWidth: 2)
-            )
+            .background(selectedBackground)
             .contentShape(Rectangle())
             
             if isSelected {
                 CheckmarkOverlay()
             }
         }
-        .onTapGesture (perform: onTap)
+        .onTapGesture(perform: onTap)
+    }
+    
+    // TeamIcon's background changes depending on whether it has been tapped or not
+    private var selectedBackground: some View {
+        RoundedRectangle(cornerRadius: 12)
+            .fill(isSelected ? Color("primary-red").opacity(0.5) : Color.clear)
+            .stroke(isSelected ? (Color("bttn-active")) : Color.clear, lineWidth: 2)
     }
         
 }
     
 // MARK: - Subviews
-
 private struct TeamFlag: View {
     let countryCode: String
     
@@ -77,6 +79,7 @@ private struct TeamName: View {
     }
 }
 
+// The overlay with the checkmark that appears when TeamIcon is tapped
 private struct CheckmarkOverlay: View {
     var body: some View {
         ZStack {
@@ -107,8 +110,6 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
-
-
 
 #Preview {
     SelectTeams()

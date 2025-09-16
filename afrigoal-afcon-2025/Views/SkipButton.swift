@@ -17,7 +17,7 @@ struct SkipButton<Destination: View> : View {
                 Text("Skip")
                     .font(Font.custom("OpenSans-Regular", size: 18))
                     .foregroundColor(.white)
-                    .padding(.trailing, 30)
+                    .padding(.trailing, 40)
             }
         }
         .zIndex(1.0)

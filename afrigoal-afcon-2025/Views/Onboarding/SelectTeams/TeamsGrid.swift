@@ -27,9 +27,9 @@ struct TeamsGrid: View {
                     TeamIcon(
                         team: team,
                         textColor: .white,
-                        isSelected: selectedTeams.contains(team)
+                        isSelected: selectedTeams.contains(team)    // A TeamIcon is selected if it is in the selectedTeams set
                     ) {
-                        toggleSelection(for: team)                  // When a TeamIcon is selected, toggle the selection
+                        toggleSelection(for: team)                  // When a TeamIcon is tapped, toggle the selection
                     }
                 }
             }
@@ -43,6 +43,9 @@ struct TeamsGrid: View {
     }
 
     // MARK: - Selection
+    // Closure we pass to the TeamIcon to execute when it is tapped
+    // If we select TeamIcon and it is in the selectedTeams, remove it from selectedTeams
+    // If we select TeamIcon and it is NOT in the selectedTeams, add it to the selectedTeams
     private func toggleSelection(for team: Team) {
         if selectedTeams.contains(team) {
             selectedTeams.remove(team)
