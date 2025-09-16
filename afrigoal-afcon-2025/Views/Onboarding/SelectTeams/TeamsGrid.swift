@@ -56,6 +56,9 @@ struct TeamsGrid: View {
                   print("Selected teams:", selectedTeams.map { $0.name })
         }
     }
+    
+//    @ViewBuilder
+//    private func allTeamsLabel
 }
             
 extension UIApplication {

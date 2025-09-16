@@ -20,7 +20,7 @@ struct SelectTeams: View {
             VStack {
                 NavigationStack {
                     ZStack {
-                        Color("bg-red").ignoresSafeArea()
+                        Color("bg-red").ignoresSafeArea() // Background color 
                         
                         ScalingHeaderScrollView {
                             // Header with fading effect

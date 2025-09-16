@@ -20,10 +20,15 @@ struct TurnOnNotifs : View {
                     .zIndex(1000)
                 
                 // Background image
-                Image("privacy-notice-bg-img")
+                Image("turn-on-notifs-bg-img")
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea()
+                    .offset(x: -51)
+                    .overlay(
+                           Color.black.opacity(0.4) // adjust opacity as needed
+                       )
+                    
                 
                 // Text
                 VStack(spacing: 15) {
