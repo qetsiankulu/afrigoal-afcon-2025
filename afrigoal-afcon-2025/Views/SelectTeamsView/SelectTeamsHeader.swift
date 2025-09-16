@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ScalingHeaderScrollView
 
 struct SelectTeamsHeader: View {
     @Binding var searchText: String
     
     var body: some View {
-        VStack(spacing: 5) {
+        VStack(spacing: 15) {
        
              // Heading
             Text("Choose the teams you'd like to follow")
@@ -36,15 +37,15 @@ struct SelectTeamsHeader: View {
         }
         .ignoresSafeArea(.keyboard) 
         .padding(.horizontal, 40)
-        .padding(.top, 40)
+        .padding(.top, 120)
         .background(Color("primary-red").ignoresSafeArea(edges: .top))
         .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 8)
-        .frame(maxWidth: .infinity, maxHeight: 230)
-    
-       
+
+
     }
     
 }
+
 
 #Preview {
     SelectTeams()
