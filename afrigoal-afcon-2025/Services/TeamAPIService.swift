@@ -20,12 +20,6 @@ struct TeamData: Codable {
 }
 
 
-struct Team: Identifiable, Equatable {
-    let id = UUID()
-    let name: String
-    let countryCode: String         // ISO country code e.g. "US", "FR", "DE"
-}
-
 let countryCodeMap: [String: String] = [
     "Algeria": "DZ",
     "Angola": "AO",

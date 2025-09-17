@@ -12,7 +12,7 @@ struct SelectTeamsHeader: View {
     @Binding var searchText: String
     
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 5) {
        
              // Heading
             Text("Choose the teams you'd like to follow")
@@ -32,6 +32,7 @@ struct SelectTeamsHeader: View {
     
             // Search Teams
             SearchBar(searchText: $searchText)
+                .padding(.top, 10)
             
             Spacer() // Pushes content to top of Header container
         }

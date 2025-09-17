@@ -11,13 +11,6 @@ struct PrivacyNotice: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // background image
-                Image("privacy-notice-bg-img")
-                    .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea()
-                
-                // Text
                 VStack(spacing: 15) {
                     Spacer()
                     Text("Your privacy is important to us")
@@ -35,11 +28,15 @@ struct PrivacyNotice: View {
                     
                     // Let's Begin button
                     NavigationButton(destination: SelectTeams(), text: "Let's Begin", isActive: true)
-
                     }
                     .padding(.bottom, 20)
                 
             }
+            .background(
+                Image("privacy-notice-bg-img")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea())
         }
     }
 }

@@ -13,17 +13,9 @@ struct TurnOnNotifs : View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                SkipButton(destination: Home())
-                    .padding(.trailing, 70)
-                    .padding(.bottom, 720)
-                    .zIndex(1000)
+            ZStack(alignment: .topTrailing) {
                 
-                // Background image
-                Image("privacy-notice-bg-img")
-                    .resizable()
-                    .scaledToFill()
-                    .ignoresSafeArea()
+                SkipButton(destination: Home())
                 
                 // Text
                 VStack(spacing: 15) {
@@ -64,8 +56,16 @@ struct TurnOnNotifs : View {
                 .navigationDestination(isPresented: $navigate) {
                     Home()
                 }
-                
+
             }
+            .background(
+                Image("turn-on-notifs-bg-img")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea() .offset(x: -51)
+                    .overlay(Color.black.opacity(0.4))) // adjust opacity as needed
+                
+         
         }
     }
 }
