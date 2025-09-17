@@ -44,9 +44,8 @@ This branch focuses on the **user onboarding experience** to help new users sele
 
 ### 🎓 What I Learned
 - Implementing **keyboard dismissal with drag gestures** in SwiftUI using `.simultaneousGesture` to preserve scroll behavior.
-- Managing **state across views** using `@StateObject` and `@Binding` effectively.
+- Manage **state across views** using `@StateObject` and `@Binding` effectively.
 - Learned how to refactor an existing component by integrating and customizing a component from an open-source SwiftUI library created by [Exyte](https://github.com/exyte).
-- Structuring **scrollable content with animations** for a polished onboarding feel.
 - Fine-tuning layout with `GeometryReader`, `ZStack`, and `Spacer()` to handle different screen sizes and navigation stacks.
 - Building a secure [**Python FastAPI backend**](https://github.com/qetsiankulu/afrigoal-backend) to safely proxy and manage API key/secret for LiveScoreAPI, enabling secure data fetching from the iOS app without exposing sensitive credentials.
 - Learned how to deploy a FastAPI backend to **Render**, securely manage API keys with environment variables, and connect the iOS app to a live backend so both simulator and physical devices can fetch data remotely
@@ -58,6 +57,16 @@ This branch focuses on the **user onboarding experience** to help new users sele
 <img width="394" height="863" alt="1" src="https://github.com/user-attachments/assets/66757df6-ff5e-4639-b218-652fd7c7d901" />
 <img width="394" height="863" alt="2" src="https://github.com/user-attachments/assets/c3fbb3f0-e6c8-49cd-8e24-0d817da9b122" />
 <img width="394" height="863" alt="3" src="https://github.com/user-attachments/assets/0e1084ad-814d-44df-9f49-71b4f4bbc682" />
+
+
+## Demo
+<div>
+  <div>
+    <a href="https://www.loom.com/share/ee2278b276d24d8fa3cc7350febbc822">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/ee2278b276d24d8fa3cc7350febbc822-0a79e47cdc1899c4-full-play.gif">
+    </a>
+  </div>
+
 
 ## Credits
 - [ScalingHeaderScrollView](https://github.com/exyte/ScalingHeaderScrollView) by [Exyte](https://github.com/exyte)
